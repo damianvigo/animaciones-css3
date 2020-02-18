@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Waves</title>
+  <style>
+    body {
+      margin:0;
+    }
+
+    .container {
+      height: 500px;
+      background: #0f9bf6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative; /* Importante para que no salga del contenedor, estan los circulos con position absolute */
+    }
+
+    .content {
+      font-family: Arial;
+      text-align: center;
+      font-size: 2em;
+      color: rgba(255, 255, 255, .8);
+    }
+
+    .waves {
+      position: absolute;
+     /*  left: 0;
+      right: 0;
+      height: 200px;
+      bottom: 0; */
+      bottom: -135px;
+      height: 527px;
+      width: 100%;
+      overflow: hidden; /* No salen del contenedor */
+    }
+
+    .wave {
+     /*  width: 200px; */
+     /*  height: 200px;
+      width: 100%; */
+     /*  border-radius: 50%; */
+      width: 2402px;
+      height: 427px;
+      background: url(waves.png) center bottom no-repeat;
+      /* background:rgba(0, 0, 0, .3); */
+      position: absolute;
+      left: -180px;
+      bottom: 0;
+      animation: 5s wave ease-in-out infinite alternate;
+    }
+
+    .wave.a {
+      background-position: 0 -854px;
+    }
+
+    .wave.b {
+      animation-delay: 6s;
+      background-position: 0 -427px;
+    }
+    
+    .wave.c {
+      animation-delay: 1.2s;
+      background-position: 0 0;
+    }
+   
+   /*  .container {
+      position: absolute;
+    } */
+
+    @keyframes wave {
+      0% {
+        /* transform: translateX(0px) translateY(0px); */
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(-80px, 30px);  
+      }
+      100% {
+        transform: translate(160px, -60px);
+      }
+    }
+  </style>
+</head>
+<body>
+ 
+  <div class="container">
+    
+    <div class="content">
+      <h1>Animaciones</h1>
+      <p>Animaciones de olas con css</p>
+    </div>
+    
+    <div class="waves">
+      <div class="wave circulo a"></div>
+      <div class="wave circulo b"></div>
+      <div class="wave circulo c"></div>
+    </div>
+  
+  </div>
+
+
+</body>
+</html>

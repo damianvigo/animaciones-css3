@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: "Arial";
+    }
+
+
+
+    .circulo {
+      background: blue;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation-name: pulso;
+      animation-duration: .4s;
+      animation-play-state: paused;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .circulo:hover {
+      background: pink;
+    }
+
+    @keyframes pulso {
+      100% {
+        transform: scale(1.2);
+      }
+    }
+
+    .container2 {
+      display: flex;
+      padding: 50px;
+      margin: 50px;
+    }
+
+    .boton {
+      padding: 10px;
+      margin: 10px;
+      margin-top: 50px;
+      background: lightblue;
+      width: 120px;
+      height: 40px;
+      border-radius: 10px;
+      box-shadow: 2px4px7px grey;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="circulo" id="circulo">
+      Pulso
+    </div>
+
+
+    <button class="boton" id="play">play</button>
+
+    <button class="boton" id="stop">stop</button>
+
+
+
+  </div>
+
+
+  <script type="text/javascript">
+    var play = document.getElementById("play");
+    var stop = document.getElementById("stop");
+    var ciculo = document.getElementById("ciirculo");
+
+    function start() {
+      circulo.style.animationPlayState = 'running'
+    }
+
+    function detener() { circulo.style.animationPlayState = 'paused' 
+    }
+   
+    play.addEventListener("click", start) 
+    stop.addEventListener("click", detener) 
+    </script>
+</body>
+
+</html>

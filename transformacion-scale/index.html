@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transformaciones-scale</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+    }
+
+    .container {
+      border: 1px solid red;
+    }
+
+    .container:hover .cuadrado {
+      /* transform: scale(x, y);  Escala de una forma vectorial asi que no pierde la resolución */
+     /*  transform: scale(0 - 1);  se mide del 0 = 0% del tamaño y 1 = 100%*/
+    /*  transform: scale(2); */
+   /*  transform: scale(.5); */
+   transform: scale(2, .5);
+    }
+
+    .cuadrado {
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      margin: 20px;
+      transition: .3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="cuadrado">Hola mundo!</div>
+  </div>
+
+</body>
+
+</html>

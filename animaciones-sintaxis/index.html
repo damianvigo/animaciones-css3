@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transformaciones punto de origen</title>  
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+    }
+
+    .container {
+      border: 1px solid red;
+      width: 100%;
+    }
+
+    .container:hover .cuadrado {
+     animation-play-state: paused; /* para pausar la animación */
+    }
+
+    .cuadrado {
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      margin: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     /*  transition: .3s; */
+      animation-name: cuadrado;
+      animation-duration: 2s;
+     /*  animation-delay: 1s; */
+      /* animation-iteration-count: 2; numero de veces que se repite la animación*/
+      animation-iteration-count: infinite;
+   /*   animation-timing-function: ease POR DEFECTO, ES LA VELOCIDAD */
+     /*  animation-timing-function: ease-in; */ /* aceleracion mas suave al inico */
+     
+     /*  animation-timing-function: ease-in-out; */ /* aceleracion lenta tanto al inicio como al final */
+      /* animation-timing-function: linear; */ /* aceleracion mecanica, aceleración constante */
+       animation-timing-function: cubic-bezier(.75,-0.31,.33,1.4); /* (1, 1, 1, 1) desde 0 a 1 o -1 */
+    /*  animation-timing-function: steps(5); */
+     
+     /* animation-direction: reverse; */
+     animation-direction: alternate;
+      animation-fill-mode: forwards; /* para que se quede como termina la animacion en este caso opacity 0 */
+     /*  animation-play-state: running;
+      animation-play-state: paused; */
+      position: relative;
+    }
+    @keyframes cuadrado {
+      0% {
+       /*  opacity: 1; */
+       left: 0;
+      }
+      100% {
+      /*   opacity: 0; */
+      left: calc(100% - 240px); /* ESTO ES IMPORTANTE PARA UN SLIDE PARA QUE NO SE SALGA LAS IMAGENES */
+      }
+    }
+
+
+  </style>
+</head>   
+<body>
+  
+  <div class="container">
+    <div class="cuadrado">Hola mundo!</div>
+  </div>
+
+</body>
+</html>

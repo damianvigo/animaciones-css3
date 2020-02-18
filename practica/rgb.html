@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RGB</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background: #34495e;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1-white {
+      color: white;
+    }
+
+   .canasta {
+     margin-top: 20px;
+     background-color: rgba(0, 0, 0, .2);
+     height: 300px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     position: relative;
+   }
+
+   .pelota {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position:absolute;
+    transition: .5s;
+    }
+
+    .red {
+      background-color: rgba(255, 0, 0, .5);
+      left: 0;
+      z-index: 0;
+    }
+
+   .canasta:hover .red {
+     left: calc(50% - 100px);
+   }
+   
+   .green {
+     background-color: rgba(0, 255, 0, .5);
+     left: calc(50% - 100px);
+     z-index: 1;
+   }
+
+   .canasta:hover .green {
+     left: calc(50% - 100px);
+   }
+
+   .blue {
+     background-color: rgba(0, 0, 255, .5);
+     right: 0;
+     z-index: -1;
+   }
+
+   .canasta:hover .blue {
+     right: calc(50% - 100px);
+   }
+
+   .white {
+     background: rgba(255, 255, 255, 0);
+     left: calc(50% - 100px);
+     z-index: 3;
+     box-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+   }
+
+   .canasta:hover .white {
+     left: calc(50% - 100px);
+     opacity: 1;
+     transition-delay: .3s;
+     background-color: rgba(255, 255, 255, 1);
+   }
+  </style>
+</head>
+<body>
+  <div class="canasta">
+    <center><h1 class="h1-white">RGB</h1></center>
+    <div class="pelota red"></div>
+    <div class="pelota green"></div>
+    <div class="pelota blue"></div>
+    <div class="pelota white"></div>
+  </div>
+</body>
+</html>
