@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../assets/images/invie.png';
 
 class Portada extends Component {
   
@@ -9,20 +8,18 @@ class Portada extends Component {
       <section id="portada" className="portada background"> 
       <header id="header" className="header contenedor"> 
         <figure class="logotipo"> 
-          <img src={logo} width="186" height="60" alt="Invie logotipo"/>
+          <img src={this.props.logo} width="186" height="60" alt="Invie logotipo"/>
         </figure>
         <span className="burguer-button icon-menu" id="burguer-button"></span>
         <nav className="menu" id="menu">
           <ul>
+            {this.props.menu.map((item) => {
+            return (
             <li>
-              <a href="index.html">Home</a>
+              <a href={item.href}>{item.title}</a>
             </li>
-            <li>
-              <a href="#guitarras">Guitarras</a>
-            </li>
-            <li>
-              <a href="precios.html">Precios</a>
-            </li>
+            )
+            })}
           </ul>
         </nav>
       </header>
